@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Spring Web App 6</title>
+    <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Activity Users</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Roles</th>
+        </tr>
+        <tr th:each="activityUser : ${activityUsers}">
+            <td th:text="${activityUser.id}"></td>
+            <td th:text="${activityUser.name}"></td>
+            <td th:text="${activityUser.firstName}"></td>
+            <td th:text="${activityUser.lastName}"></td>
+            <td th:text="${activityUser.roles}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Spring Web App 6</title>
+    <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Activities</h1>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Time</th>
+            <th>Distance</th>
+            <th>Duration</th>
+            <th>Weight</th>
+        </tr>
+        <tr th:each="activity : ${activities}">
+            <td th:text="${activity.activityUser.name}"></td>
+            <td th:text="${activity.id}"></td>
+            <td th:text="${activity.title}"></td>
+            <td th:text="${#dates.format(activity.time, 'dd.MM.yyyy HH:mm')}"></td>
+            <td th:text="${#numbers.formatDecimal(activity.distance, 1, 2, 'COMMA') + ' ' + activity.distanceUoM}"></td>
+            <td th:text="${activity.duration + ' ' + activity.durationUoM}"></td>
+            <td th:text="${#numbers.formatDecimal(activity.weight, 1, 1, 'COMMA') + ' ' + activity.weightUoM}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
