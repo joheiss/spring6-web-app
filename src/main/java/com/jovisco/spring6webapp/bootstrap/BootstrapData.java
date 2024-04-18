@@ -1,7 +1,7 @@
 package com.jovisco.spring6webapp.bootstrap;
 
+import java.time.Instant;
 import java.util.Arrays;
-import java.util.Date;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -35,7 +35,7 @@ public class BootstrapData implements CommandLineRunner{
         ActivityUser joSaved = userRepository.save(jo);
 
         Activity activity1 = new Activity();
-        activity1.setTime(new Date());
+        activity1.setTime(Instant.now());
         activity1.setTitle("Treadmill 4");
         activity1.setDistance(12.34);
         activity1.setDistanceUoM("km");
@@ -50,7 +50,7 @@ public class BootstrapData implements CommandLineRunner{
         joSaved.getActivities().add(activity1Saved);
 
         Activity activity2 = new Activity();
-        activity2.setTime(new Date());
+        activity2.setTime(Instant.now());
         activity2.setTitle("Treadmill 4");
         activity2.setDistance(9.87);
         activity2.setDistanceUoM("km");

@@ -23,7 +23,8 @@
             <td th:text="${activity.activityUser.name}"></td>
             <td th:text="${activity.id}"></td>
             <td th:text="${activity.title}"></td>
-            <td th:text="${#dates.format(activity.time, 'dd.MM.yyyy HH:mm')}"></td>
+            <td th:text="${#temporals.format(activity.time, 'dd.MM.yyyy HH:mm')}"></td>
+            <!-- <td th:text="${#dates.format(activity.time, 'dd.MM.yyyy HH:mm')}"></td> -->
             <td th:text="${#numbers.formatDecimal(activity.distance, 1, 2, 'COMMA') + ' ' + activity.distanceUoM}"></td>
             <td th:text="${activity.duration + ' ' + activity.durationUoM}"></td>
             <td th:text="${#numbers.formatDecimal(activity.weight, 1, 1, 'COMMA') + ' ' + activity.weightUoM}"></td>

@@ -1,6 +1,6 @@
 package com.jovisco.spring6webapp.domain;
 
-import java.util.Date;
+import java.time.Instant;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ import jakarta.persistence.ManyToOne;
 public class Activity {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date time;
+    private Instant time;
     private String title;
     private double distance;
     private String distanceUoM;
@@ -32,10 +32,10 @@ public class Activity {
     public void setId(Long id) {
         this.id = id;
     }
-    public Date getTime() {
+    public Instant getTime() {
         return time;
     }
-    public void setTime(Date time) {
+    public void setTime(Instant time) {
         this.time = time;
     }
     public String getTitle() {
